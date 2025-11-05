@@ -37,3 +37,119 @@ This section explains some core ideas behind quantum computation and why these s
 * It states that for a quantum particle (like a photon) to get from point A to point B, it **simultaneously takes every single possible path** between them.
 * Each path has a "score" attached to it.
 * The final probability of the photon landing somewhere is found by **adding up the scores from all the possible paths**. The interference is the result of adding those scores, where paths that are "out of sync" cancel each other out, and those "in sync" combine.
+
+# 💡 Quantum Game Time Comparison FAQ
+
+This section answers how long it takes to solve the quantum photon game (Boson Sampling) using a regular computer versus building the actual experiment.
+
+---
+
+## 💻 Part 1: Computational Difficulty (Classical Computer)
+
+This measures the time it takes a regular computer to **calculate** the final photon distribution.
+
+### **Q1: How difficult is it to computationally predict the outcomes of this quantum game?**
+
+**A:** It is **exponentially difficult**. The time needed grows incredibly fast as you add more layers or photons.
+
+A classical computer struggles because it can't just track one photon; due to **interference**, it must calculate what happens when **every possible path combination** of the two photons meets and interacts (constructively or destructively).
+
+### **Q2: How much time does it take to calculate the photon distribution for a 3-layer quantum game with two photons?**
+
+**A:** The total time is **$64 t_c$ seconds**.
+
+Here is the simple breakdown:
+
+1.  **Paths per Photon:** A 3-layer game means each photon hits 3 splitters. This gives $2 \times 2 \times 2 = **8**$ paths per photon.
+2.  **Total Combinations:** With two photons, we must check every path combination: $8 \times 8 = **64**$ total combinations.
+3.  **Total Time:** Since one calculation takes $t_c$, the total time is $64 t_c$.
+
+This number grows extremely fast: for a 10-layer game, the time would be over a million times $t_c$ ($1,048,576 t_c$)! 
+
+[Image of exponential growth curve showing time increasing rapidly]
+
+
+---
+
+## ⚡ Part 2: Experimental Speed (Quantum System)
+
+This measures the time it takes to **build and run** the experiment in real life, which is what a quantum computer essentially does.
+
+### **Q3: How much time does it take for a 3-layer experimental solve of this quantum game?**
+
+**A:** The total time is **$t_q$ seconds**.
+
+### **Why is it so fast?**
+
+The key difference is that when you **build it**, you are letting the laws of physics do the work:
+
+* **The system is the computer:** The actual photons and beam splitters **perform the calculation** automatically through superposition and interference.
+* **Speed of Light:** The only time delay that matters is how long the photons take to travel through the grid from the top to the bottom counters. This travel time is extremely fast, and the problem defines this experimental sampling time as **$t_q$**.
+* **The Big Idea:** This is why scientists want quantum computers! **Calculating** the answer is slow ($64 t_c$, and quickly much worse), but **running the actual experiment** is always fast ($t_q$). [Image comparing a classical computer struggling with many paths versus a quantum circuit solving it instantly]
+
+***
+
+### 🚀 Summary: Calculation vs. Experiment
+
+| Method | Time to Solve (3-Layers) | Difficulty |
+| :--- | :--- | :--- |
+| **Classical Computer** | $64 t_c$ | **Exponentially Hard** (time explodes as game grows) |
+| **Experimental Setup** | $t_q$ | **Always Fast** (limited only by the speed of light) |
+
+# ⚛️ The Quantum Computing Game: A Kid's Guide
+
+This document explains the core concepts from the Introduction to Quantum Computing course, focusing on the fundamental differences between regular (classical) and quantum computation.
+
+---
+
+## 🧠 Part 1: The Foundations
+
+### **Q1: What is the "Nature of Computation" in simple terms?**
+
+**A:** It's the simple idea that any complex task a computer does (like running a video game) can be broken down into a massive number of very basic steps. A regular computer's core job is just managing billions of tiny **ON/OFF switches** called **bits** (1s and 0s) according to a simple set of instructions.
+
+### **Q2: The Difference Between Classical and Quantum Paths (Feynman Path Integral)**
+
+The most complex idea is why quantum systems are so hard to predict. It comes down to how particles travel:
+
+| Feature | Classical World (Marbles) | Quantum World (Photons) |
+| :--- | :--- | :--- |
+| **Path Taken** | Only takes **one** definite path. | Takes **every possible path** simultaneously (**Sum Over Histories**).  |
+| **Calculation** | Easy: Just track the single path. | Hard: You must **add up the "scores"** (amplitudes) from all possible paths, which is where interference happens. |
+
+---
+
+## 💾 Part 2: Bits, Qubits, and Speed
+
+### **Q3: How do the bits affect the speed of solving a problem?**
+
+The type of bit determines whether a solution is slow or fast:
+
+| Feature | 💾 Classical Bit (Switch) | ⚛️ Qubit (Quantum Bit) |
+| :--- | :--- | :--- |
+| **State** | Only **ON (1)** or **OFF (0)** at any time. | Can be **ON (1)**, **OFF (0)**, or **both at the same time** (**superposition**).  |
+| **Solving Method** | Solves problems **sequentially** (one path at a time). | Solves problems **simultaneously** (all paths at once). |
+
+### **Q4: Why does the Classical Computer struggle with the photon game?**
+
+Due to **quantum interference**, a classical computer must **calculate every single combination of paths** to see which waves cancel out (destructive interference) and which waves combine (constructive interference).
+
+### **Q5: How long does it take to solve the game (3 layers, 2 photons)?**
+
+| Method | Time to Solve | Difficulty |
+| :--- | :--- | :--- |
+| **Classical Computer** (Calculating) | **$64 t_c$ seconds** | **Exponentially Hard** (time explodes as game grows) |
+| **Experimental Setup** (Building it) | **$t_q$ seconds** | **Always Fast** (limited only by the speed of light) |
+
+*The $64 t_c$ comes from $8 \times 8$ possible path combinations for the two photons.*
+
+---
+
+## 🔗 Part 3: The Quantum Connection
+
+### **Q6: What is Entanglement and why does it make qubits powerful?**
+
+**A:** **Entanglement** is a bizarre link between two or more qubits where they share the same fate, no matter how far apart they are.
+
+* **The Link:** If you measure Qubit A and find it is ON, you instantly know Qubit B's state. 
+* **The Power:** Entanglement makes all the qubits work together as a single, incredibly complex system. This linked state allows the quantum computer to efficiently manage the vast number of possibilities created by superposition, which is necessary for exponential speedups.
