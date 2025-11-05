@@ -1,0 +1,39 @@
+# ❓ Quantum Computing Concepts FAQ
+
+This section explains some core ideas behind quantum computation and why these systems are so hard to simulate classically.
+
+---
+
+## 🧠 The Foundations
+
+### **Q1: What is the "Nature of Computation" in simple terms?**
+
+**A:** It's the simple idea that any complex task a computer does (like running a video game or calculating your homework) can be broken down into a massive number of very basic steps. A regular computer's core job is just managing billions of tiny **ON/OFF switches** called **bits** (1s and 0s) according to a simple set of instructions.
+
+---
+
+## ✨ The Challenge of Quantum Simulation
+
+### **Q2: Why is it so hard for a regular (classical) computer to predict the outcome of the photon game (Boson Sampling)?**
+
+**A:** The difficulty is due to **quantum interference**, and it grows **exponentially**.
+
+* **Classical Game (e.g., Marbles):** Marbles are **independent**. You just add up the probabilities of individual paths.
+* **Quantum Game (Photons):** Photons act like **waves** and take **all possible paths simultaneously** (superposition). When the waves from different paths meet at the end, they **interfere** (they can combine to make a stronger result or cancel each other out).
+* To solve this, a classical computer must calculate the effect of **every single combination of paths** to see which ones reinforce and which ones cancel out. The number of combinations explodes as the game gets bigger.
+
+### **Q3: How much time does it take to calculate the photon distribution for a 3-layer quantum game with two photons?**
+
+**A:** It takes **$64 t_c$ seconds**.
+
+* Since there are 3 layers of splitters, each photon can take $2 \times 2 \times 2 = 8$ paths.
+* We must consider every combination for the two photons: $8 \times 8 = 64$ path combinations.
+* Since each interference calculation takes time $t_c$, the total time is $64 t_c$.
+
+### **Q4: What is the underlying scientific concept (Feynman Path Integral) behind why the paths interfere?**
+
+**A:** This big idea is called the **Feynman Path Integral** (or **Sum Over Histories**).
+
+* It states that for a quantum particle (like a photon) to get from point A to point B, it **simultaneously takes every single possible path** between them.
+* Each path has a "score" attached to it.
+* The final probability of the photon landing somewhere is found by **adding up the scores from all the possible paths**. The interference is the result of adding those scores, where paths that are "out of sync" cancel each other out, and those "in sync" combine.
