@@ -419,3 +419,89 @@ Two photons → (2ⁿ) × (2ⁿ) = 2^(2n) path combinations
   then total time required = **2^(2n) × t_c**.
 
 🧩 **This shows why quantum simulations become exponentially harder** as you add more layers — the number of paths grows incredibly fast!
+
+# Photon Traversal and Measurement Time in Multi-Layer Quantum Experiments
+
+## Step-by-Step Explanation
+
+1. **Photon travel time (`t_trip`):**  
+   A photon starts at the top beam splitter and travels down to the detectors.  
+   The time it takes for this journey is called the **trip time**, denoted as:
+
+t_trip
+
+
+2. **Photon sampling and averaging time (`t_q`):**  
+To measure the photon distribution reliably, we need to detect and average many photons.  
+The total sampling time is proportional to how many photons we measure and how long each one takes to travel:
+
+t_q = (# photons) × t_trip
+
+
+3. **Adding layers increases travel time:**  
+Each new layer adds distance to the photon's path.  
+So if there are `n` layers:
+
+t_trip(n) = n × t_trip
+
+
+4. **Total time for an n-layer experiment:**
+Substituting the longer trip time into the earlier equation:
+
+Total measurement time = n × t_q
+
+
+This means the time needed to collect and average photon data increases **linearly** with the number of layers.
+
+---
+
+## Example
+
+If a single-layer setup takes 10 nanoseconds (`t_q = 10 ns`) to measure:
+
+| Layers (n) | Measurement Time (n × t_q) |
+|-------------|-----------------------------|
+| 1           | 10 ns                      |
+| 2           | 20 ns                      |
+| 3           | 30 ns                      |
+| 5           | 50 ns                      |
+
+---
+
+## Text Diagram
+
+Top Beam Splitter
+|
+| (each layer adds travel distance)
+v
+[BS1] ---> [BS2] ---> [BS3] ---> Detectors
+<---- distance ℓ per layer ---->
+
+Photon trip time for n layers: t_trip(n) = n × t_trip
+Total measurement time: t_total = n × t_q
+
+
+---
+
+## Important Note
+
+> Some eagle-eyed readers might ask:
+> “If we have more detectors, won’t it take longer to measure everything?”
+>
+> That’s a good question!  
+> In this thought experiment, we assume that **detector count doesn’t affect the timing**,  
+> only the photon travel distance (number of layers) does.  
+> This keeps the focus on how **distance and layering** influence the time, not detection electronics.
+
+---
+
+## Summary
+
+- **Photon trip time (`t_trip`)** is the time for one photon to travel from top to bottom.  
+- **Sampling time (`t_q`)** = number of photons × `t_trip`.  
+- **For n layers:**  
+
+t_total = n × t_q
+
+- The measurement time grows **linearly** with the number of layers.
+- Detector count could change things in real life, but it doesn’t affect this simplified model.
