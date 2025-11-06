@@ -1,5 +1,161 @@
 # Quantum AI
 # Resources
+
+---
+# 🧠 Quantum Computing Foundations: Learning Path Before Cirq
+
+This guide helps you build the essential knowledge and skills needed to understand and use **Cirq**, Google’s quantum programming framework.  
+It assumes minimal background and focuses on **core concepts, math foundations, and practical resources**.
+
+---
+
+## 📘 Table of Contents
+1. [Stage 1: Core Prerequisites](#stage-1-core-prerequisites)
+2. [Stage 2: Learn Quantum Computing Fundamentals](#stage-2-learn-quantum-computing-fundamentals)
+3. [Stage 3: Mathematical Foundations](#stage-3-mathematical-foundations)
+4. [Stage 4: Programming for Quantum Systems](#stage-4-programming-for-quantum-systems)
+5. [Stage 5: Hands-On Quantum Simulation](#stage-5-hands-on-quantum-simulation)
+6. [Stage 6: Transition to Cirq](#stage-6-transition-to-cirq)
+7. [Bonus: Books and YouTube Lectures](#bonus-books-and-youtube-lectures)
+
+---
+
+## 🪜 Stage 1: Core Prerequisites
+
+Before touching quantum code, make sure you’re comfortable with:
+- **Basic Python programming** (variables, loops, functions, classes)
+- **Linear Algebra** (vectors, matrices, complex numbers)
+- **Introductory Probability**
+
+### 📚 Resources:
+- [Python for Everybody (Coursera)](https://www.coursera.org/specializations/python)
+- [Khan Academy: Linear Algebra](https://www.khanacademy.org/math/linear-algebra)
+- [3Blue1Brown: Essence of Linear Algebra (YouTube)](https://www.youtube.com/watch?v=fNk_zzaMoSs)
+- [Khan Academy: Probability & Statistics](https://www.khanacademy.org/math/statistics-probability)
+
+---
+
+## ⚛️ Stage 2: Learn Quantum Computing Fundamentals
+
+Here you’ll understand **qubits**, **superposition**, **entanglement**, and **measurement** — the core physics behind Cirq.
+
+### 📚 Courses:
+- [IBM Quantum Learning Platform](https://quantum-computing.ibm.com/)
+- [UChicagoX: Introduction to Quantum Computing (edX)](https://www.edx.org/course/introduction-to-quantum-computing)
+- [Brilliant.org – Quantum Computing Course](https://brilliant.org/courses/quantum-computing/)
+- [Quantum Country (Free Online Textbook)](https://quantum.country/qcvc)
+
+🧩 **Focus Concepts**
+- Qubits and the Bloch Sphere  
+- Quantum Gates (X, Y, Z, H, CNOT, etc.)  
+- Measurement and Collapse  
+- Quantum Circuits  
+
+---
+
+## 🧮 Stage 3: Mathematical Foundations
+
+To understand Cirq’s gate operations and simulations, you’ll need strong math intuition in **complex numbers**, **vector spaces**, and **tensor products**.
+
+### 📚 Resources:
+- [HarvardX: Quantum Computing Fundamentals (edX)](https://www.edx.org/course/quantum-computing-fundamentals)
+- [The Math of Quantum Computing (YouTube by Michael Nielsen)](https://www.youtube.com/@michaelnielsen)
+- [Linear Algebra Refresher for Quantum Computing (Qiskit Textbook)](https://qiskit.org/textbook/ch-appendix/linear_algebra.html)
+
+🧠 **Key Topics**
+- Matrix multiplication and unitary operations  
+- Eigenvalues/eigenvectors (important for quantum observables)  
+- Tensor products (multi-qubit systems)  
+- Dirac notation (bras ⟨ψ| and kets |ψ⟩)
+
+---
+
+## 💻 Stage 4: Programming for Quantum Systems
+
+Here you’ll practice implementing basic quantum concepts using Python.
+
+### 📚 Recommended Tools:
+- [Qiskit Textbook (IBM)](https://qiskit.org/textbook/)
+- [Quantum Katas by Microsoft](https://learn.microsoft.com/en-us/quantum/overview/quantum-katas)
+- [Python Numpy Refresher (NumPy.org)](https://numpy.org/doc/stable/user/absolute_beginners.html)
+
+🧩 **Hands-on Goals**
+- Simulate qubit states using NumPy arrays  
+- Apply quantum gates (as matrices)  
+- Measure probabilities by squaring amplitudes  
+
+---
+
+## 🧪 Stage 5: Hands-On Quantum Simulation
+
+Before Cirq, experiment with other beginner-friendly frameworks to build intuition.
+
+### 📚 Practice Platforms:
+| Platform | Description | Link |
+|-----------|--------------|------|
+| **IBM Quantum Composer** | Visual drag-and-drop circuit builder | https://quantum-computing.ibm.com/composer |
+| **Qiskit SDK** | Python library to simulate circuits | https://qiskit.org |
+| **Microsoft Q# / QDK** | Code-first approach to quantum logic | https://learn.microsoft.com/en-us/quantum/overview |
+
+🧩 Try building:
+- A **single qubit simulator**  
+- The **Bell State (entanglement)**  
+- A **Quantum Teleportation Circuit**  
+
+---
+
+## 🧰 Stage 6: Transition to Cirq
+
+Once you understand how quantum circuits and gates work, you’re ready for **Cirq**.
+
+### 📚 Cirq Resources:
+- [Official Cirq Documentation](https://quantumai.google/cirq)
+- [Cirq GitHub Repository](https://github.com/quantumlib/Cirq)
+- [Quantum Computing with Cirq (Qiskit vs Cirq Comparison)](https://quantumai.google/cirq/start)
+- [Google’s Quantum AI Tutorials](https://quantumai.google/education)
+
+🧩 **First Cirq Projects**
+- Build and simulate basic circuits  
+- Implement quantum gates (H, CNOT, Z, etc.)  
+- Measure qubits and visualize results  
+- Explore noise models and simulators  
+
+---
+
+## 📚 Bonus: Books and YouTube Lectures
+
+### 📘 Books
+- *Quantum Computation and Quantum Information* — Nielsen & Chuang (classic)
+- *Quantum Computing for Everyone* — Chris Bernhardt  
+- *Dancing with Qubits* — Robert Sutor  
+
+### 🎥 YouTube
+- [3Blue1Brown: Quantum Computing Series](https://www.youtube.com/watch?v=F_Riqjdh2oM)
+- [Qiskit YouTube Channel](https://www.youtube.com/@qiskit)
+- [Quantum AI (Google)](https://www.youtube.com/@QuantumAI)
+
+---
+
+## 🎯 Summary Learning Roadmap
+
+| Stage | Focus | Example Tools |
+|--------|--------|----------------|
+| 1 | Python, Math Basics | Python, Khan Academy |
+| 2 | Quantum Concepts | IBM Quantum, Brilliant |
+| 3 | Linear Algebra, Complex Numbers | Qiskit Textbook |
+| 4 | Simulation in Python | NumPy, Qiskit |
+| 5 | Hands-on Circuits | IBM Quantum Lab |
+| 6 | Dive into Cirq | Cirq Docs, Google AI |
+
+---
+
+✅ **End Goal:**  
+By following this path, you’ll:
+- Understand how qubits and gates work  
+- Be comfortable coding and simulating quantum systems  
+- Be fully prepared to explore Cirq for real quantum algorithm design  
+
+---
 # 🧠 Quantum Computing Foundations: A Learning Guide
 
 This is a list of beginner-friendly resources to help you gain the necessary foundational knowledge for learning the **Cirq** framework.  
