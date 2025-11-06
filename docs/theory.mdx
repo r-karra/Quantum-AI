@@ -758,6 +758,404 @@ where:
 - `γ` (gamma) = surface tension (energy per unit area)
 - `S` = surface area of the soap film
 
+## Quantum computing for everyone.
+# 🚗 Understanding the Traveling Salesperson Problem (TSP)
+
+## 🧭 The Everyday Analogy
+
+Imagine you’re planning your route to work — but before you get there, you need to:
+- Drop your friend at the gym,
+- Grab a coffee,
+- Pick up your dry cleaning.
+
+Now, there are **multiple possible orders** in which you could visit these places.  
+Which order gives you the **shortest route** and saves the most time?
+
+That’s exactly what the **Traveling Salesperson Problem (TSP)** tries to solve!
+
+---
+
+## 🧮 The Math Behind It
+
+If you have **n** total locations (cities, stops, or tasks),  
+the number of possible ways you can arrange these visits is given by the **factorial** function:
+
+\[
+n! = n \times (n - 1) \times (n - 2) \times \dots \times 1
+\]
+
+---
+# 🧮 Understanding the Factorial: n! = n × (n − 1) × (n − 2) × ... × 1
+
+## 🧠 What "n!" Means
+
+The symbol **n! (read as “n factorial”)** tells you how many **different ways** you can arrange or order **n unique things**.
+
+Think of it as:  
+👉 “How many different routes, orders, or sequences are possible if I have n items?”
+
+---
+
+## 🎒 Example: Packing for a Trip
+
+Imagine you have **3 shirts** — red, blue, and green — and you want to decide **in what order to wear them**.
+
+Let’s list all possibilities:
+
+1️⃣ Red → Blue → Green  
+2️⃣ Red → Green → Blue  
+3️⃣ Blue → Red → Green  
+4️⃣ Blue → Green → Red  
+5️⃣ Green → Red → Blue  
+6️⃣ Green → Blue → Red  
+
+There are **6 total orders**.
+
+So, for **3 shirts**, the number of ways = **3 × 2 × 1 = 6**.
+
+That’s **3! = 6**.
+
+---
+
+## 🗺️ Example: The Traveler’s Routes
+
+Now think of a **traveling salesperson** who must visit **4 cities** (A, B, C, D).
+
+- From the starting city, they can choose **4** places to go first.  
+- Then there are **3** choices for the second city.  
+- Then **2** choices for the third.  
+- Finally, only **1** city left.
+
+So, the total number of possible routes:
+
+\[
+4! = 4 × 3 × 2 × 1 = 24
+\]
+
+There are **24 different ways** to visit all 4 cities once.
+
+---
+
+## 🧩 Why It Grows So Fast
+
+Each time you add **just one more city**, you multiply by a bigger number.
+
+| n (number of cities) | Formula | Total Routes |
+|-----------------------|----------|---------------|
+| 2 | 2 × 1 | 2 |
+| 3 | 3 × 2 × 1 | 6 |
+| 4 | 4 × 3 × 2 × 1 | 24 |
+| 5 | 5 × 4 × 3 × 2 × 1 | 120 |
+| 10 | 10 × 9 × 8 × ... × 1 | 3,628,800 |
+
+That’s why **factorials explode** — adding just a few more items makes the total number of combinations skyrocket!
+
+---
+
+## 💡 Intuitive Idea
+
+Factorials count **all possible orders** of doing things.
+
+Think of it like:
+> "If I have n choices for the first step,  
+> n−1 choices for the second,  
+> n−2 for the next,  
+> ... until 1 choice left —  
+> how many total different ways can I go through them all?"
+
+Multiply them all together — that’s **n!**
+
+---
+
+## ⚙️ Summary
+
+| Concept | Meaning |
+|----------|----------|
+| **n!** | The number of ways to arrange n unique items |
+| **Formula** | n × (n − 1) × (n − 2) × ... × 1 |
+| **Used in** | Combinations, probabilities, Traveling Salesperson Problem |
+| **Why it matters** | It shows how fast complexity grows as problems get larger |
+
+---
+
+## 🧠 Visual Intuition
+
+n! = choices keep shrinking as you decide
+
+For n = 4:
+Step 1 → 4 choices
+Step 2 → 3 choices
+Step 3 → 2 choices
+Step 4 → 1 choice
+Total = 4 × 3 × 2 × 1 = 24 routes
+
+---
+
+✅ **Takeaway:**
+Every time you add one more stop, one more object, or one more choice,  
+the number of possible orders grows **multiplicatively**, not additively —  
+and that’s why factorial growth is **super fast**.
+
+
+---
+
+This number grows **extremely fast** as \( n \) increases.
+
+---
+
+## 📊 Example: How Fast It Grows
+
+| Number of Stops (n) | Number of Possible Routes (n!) |
+|----------------------|--------------------------------|
+| 3 | 6 |
+| 4 | 24 |
+| 5 | 120 |
+| 6 | 720 |
+| 10 | 3,628,800 |
+| 15 | 1,307,674,368,000 |
+| 20 | 2,432,902,008,176,640,000 |
+
+Even with **15 stops**, there are **over a trillion** possible routes!  
+That’s impossible for a normal computer to check one-by-one in a reasonable time.
+
+---
+
+## ⚙️ Why It Matters
+
+This is why TSP is known as an **NP-hard problem** —  
+it’s computationally very expensive because the number of possible routes grows **factorially**.
+
+So, as \( n \) increases, the time a computer needs to find the best route **explodes**.
+
+---
+
+## ⚛️ The Quantum Connection
+
+Quantum computers don’t “try every path” one by one like classical computers.  
+Instead, they can use quantum properties (like **superposition** and **interference**)  
+to explore **many routes at once** and **amplify** the best solutions.
+
+That’s why the TSP is a popular benchmark for testing **quantum optimization** algorithms.
+
+---
+
+## 🧠 Summary
+
+- The TSP asks: *“What’s the shortest route that visits every stop exactly once and returns home?”*  
+- The number of possible routes = **n! (factorial growth)**  
+- Classical computers struggle as \( n \) gets large.  
+- Quantum methods may offer faster ways to approximate or find optimal paths.
+
+---
+
+### 📘 Want to Learn More?
+- [Wikipedia: Traveling Salesman Problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+- [MIT OCW: Combinatorial Optimization](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2008/)
+- [Qiskit Optimization TSP Example](https://qiskit.org/documentation/optimization/tutorials/06_examples_max_cut_and_tsp.html)
+
+
+## Travelling Salesman Problem:
+
+Ref: [*] https://algorithms.discrete.ma.tum.de/graph-games/tsp-game/index_en.html
+
+# 🧭 Traveling Salesperson Problem (TSP) — Explained Like You’re a Kid
+
+The **Traveling Salesperson Problem (TSP)** is about finding the *shortest possible route* to visit all your stops (friends, cities, or houses) and come back home.  
+Let’s look at three ways (algorithms) people try to solve this problem!
+
+---
+
+## 🚗 1. Nearest Neighbour Algorithm
+
+### 🧩 What It Does
+- Start from your home.  
+- Go to the **closest** friend you haven’t visited yet.  
+- Repeat until you’ve visited everyone, then go back home.
+
+### ⚙️ Why It’s Easy but Not Perfect
+- It’s quick and simple — you always choose the nearest next step.  
+- But early choices can lead to long detours later.  
+- It’s a **heuristic** — a “good guess,” not the perfect answer.
+
+### 👶 Kid Analogy
+Imagine you’re in a big park with your friends sitting around.  
+You visit the *nearest* friend, say hi, then move to the next *nearest* one, and so on until you’ve greeted everyone.  
+You might end up walking more than needed — but it’s easy to plan!
+
+---
+
+## 🪢 2. Multiple Fragment Algorithm
+
+### 🧩 What It Does
+- Look at **all pairs of friends** and sort them by how close they are.  
+- Start connecting the closest pairs (short ribbons between them).  
+- Follow two rules:
+  1. No friend can have more than two ribbons (two connections).  
+  2. Don’t make small circles that leave others out — you want one big loop.
+
+### ⚙️ Why It’s Sometimes Better
+- It tries to keep your route compact by picking short connections.  
+- But it can still miss the perfect path.
+
+### 👶 Kid Analogy
+You’re tying ribbons between friends sitting around a circle.  
+You always tie the closest two friends first but make sure you don’t make tiny loops that exclude others.  
+In the end, everyone is connected in one big loop — your walking route!
+
+---
+
+## 🌳 3. Branch and Bound Algorithm (with Lagrangian Relaxation)
+
+### 🧩 What It Does
+- This one looks for the **perfect** shortest route.  
+- It first *simplifies* the problem (this gives an estimate — a “lower bound”).  
+- Then it **branches** into smaller choices:  
+  - “This path must be used”  
+  - “This path must not be used”  
+- It skips paths that are already worse than the best one found (that’s the “bound”).  
+- Eventually, it finds the *absolute best* route.
+
+### ⚙️ Why It’s Accurate but Slow
+- It *guarantees* the best solution.  
+- But as cities increase, the number of possibilities grows super fast — it can take a long time.
+
+### 👶 Kid Analogy
+You’re finding the best way to collect treasures hidden around a map.  
+You test small choices: “What if I go here first? What if I skip that?”  
+If one choice is already too long, you ignore it and try a shorter one.  
+After enough smart choices, you find the *perfect* treasure route!
+
+---
+
+## ✅ Summary Table
+
+| Algorithm | Description | Speed | Accuracy | Example Analogy |
+|------------|--------------|--------|-----------|------------------|
+| **Nearest Neighbour** | Always go to the nearest next stop | 🚀 Fast | ⚠️ Not perfect | Visiting closest friends first |
+| **Multiple Fragment** | Connect closest pairs step-by-step | ⚡ Medium | 👍 Better | Tying short ribbons between friends |
+| **Branch & Bound** | Tries all possibilities efficiently | 🐢 Slow | 🏆 Best | Testing all treasure paths |
+
+---
+```
+import itertools
+import math
+
+# Step 1: Define the cities and their coordinates
+cities = {
+    "A": (0, 0),
+    "B": (1, 5),
+    "C": (5, 2),
+    "D": (6, 6),
+    "E": (8, 3)
+}
+
+# Step 2: Helper function to calculate distance between two cities
+def distance(city1, city2):
+    x1, y1 = cities[city1]
+    x2, y2 = cities[city2]
+    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+# Step 3: Total route distance
+def route_distance(route):
+    dist = 0
+    for i in range(len(route) - 1):
+        dist += distance(route[i], route[i+1])
+    dist += distance(route[-1], route[0])  # return home
+    return dist
+
+# 1. Nearest Neighbour Algorithm
+def nearest_neighbour(start="A"):
+    unvisited = set(cities.keys())
+    route = [start]
+    unvisited.remove(start)
+
+    while unvisited:
+        current = route[-1]
+        next_city = min(unvisited, key=lambda city: distance(current, city))
+        route.append(next_city)
+        unvisited.remove(next_city)
+
+    return route, route_distance(route)
+
+# 2. Multiple Fragment Algorithm (simplified version)
+def multiple_fragment():
+    edges = []
+    for a, b in itertools.combinations(cities.keys(), 2):
+        edges.append((a, b, distance(a, b)))
+    edges.sort(key=lambda x: x[2])
+
+    connections = {city: [] for city in cities}
+    route_edges = []
+
+    for a, b, dist in edges:
+        if len(connections[a]) < 2 and len(connections[b]) < 2:
+            # Avoid small loops
+            if not creates_small_loop(route_edges, a, b):
+                connections[a].append(b)
+                connections[b].append(a)
+                route_edges.append((a, b))
+            if len(route_edges) == len(cities):
+                break
+
+    # Build the route from the connections
+    start = list(cities.keys())[0]
+    route = [start]
+    current = start
+    prev = None
+    while len(route) < len(cities):
+        next_city = [x for x in connections[current] if x != prev][0]
+        route.append(next_city)
+        prev, current = current, next_city
+
+    return route, route_distance(route)
+
+def creates_small_loop(edges, a, b):
+    # Simple check for small loops
+    connected = {a}
+    stack = [a]
+    while stack:
+        node = stack.pop()
+        for x, y in edges:
+            if node in (x, y):
+                neighbor = y if node == x else x
+                if neighbor not in connected:
+                    connected.add(neighbor)
+                    stack.append(neighbor)
+    return b in connected and len(connected) < len(cities)
+
+# 3. Branch and Bound (simplified: brute-force search)
+def branch_and_bound():
+    best_route = None
+    best_distance = float("inf")
+
+    for perm in itertools.permutations(cities.keys()):
+        dist = route_distance(perm)
+        if dist < best_distance:
+            best_distance = dist
+            best_route = perm
+
+    return best_route, best_distance
+
+# Step 4: Run the algorithms
+nn_route, nn_dist = nearest_neighbour()
+mf_route, mf_dist = multiple_fragment()
+bb_route, bb_dist = branch_and_bound()
+
+print("Nearest Neighbour Route:", nn_route, "Distance:", round(nn_dist, 2))
+print("Multiple Fragment Route:", mf_route, "Distance:", round(mf_dist, 2))
+print("Branch and Bound (Optimal) Route:", bb_route, "Distance:", round(bb_dist, 2))
+
+```
+Ref. [Experiment with QC] https://github.com/r-karra/Quantum-AI/blob/3c42b87ffe70592a87ccb109f8221c28fe41f44c/Experiments_with_QuantumComputing.ipynb
+
+
+
+
+
+
+# Ref: 
+[1] brilliant.org. https://brilliant.org/home/ \
+[2] EdX - Quantum computing for everyone. https://learning.edx.org/course/course-v1:UChicagoX+QUAN11000+3T2024/block-v1:UChicagoX+QUAN11000+3T2024+type@sequential+block@cee48a5795ca4bf6bd6b8000b805d405/block-v1:UChicagoX+QUAN11000+3T2024+type@vertical+block@1f7c36bd607245888b71576cfc7b3eff
 
 
 
@@ -767,6 +1165,3 @@ where:
 
 
 
-
-# Ref:
-[1] brilliant.org [https://brilliant.org/courses/quantum-computing/introduction-108/the-nature-of-computation-2/?from=icp_node&from_llp=science](https://brilliant.org/courses/quantum-computing/introduction-108/the-nature-of-computation-2/?from=icp_node&from_llp=science)
