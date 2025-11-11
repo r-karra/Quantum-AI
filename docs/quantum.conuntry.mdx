@@ -1,0 +1,214 @@
+
+# Understanding the Quantum State |ψ⟩ = (|0⟩ + i|1⟩)/√2
+
+> Based on material from [quantum.country](https://quantum.country)
+
+This document explains the state, its vector form, measurement behavior, and Bloch-sphere interpretation.
+
+---
+
+## 1. Writing the State in Vector Form
+
+The computational basis states are:
+
+```
+|0⟩ = [1, 0]ᵀ
+|1⟩ = [0, 1]ᵀ
+```
+
+So the given state becomes:
+
+```
+|ψ⟩ = (1/√2) * [1, i]ᵀ
+```
+
+This is the **component (column vector) notation** for the state.
+
+---
+
+## 2. Intuitive Meaning
+
+The factor `i` (representing a 90° phase shift) means that the two parts of the superposition — |0⟩ and |1⟩ — are **out of phase**.
+
+On the **Bloch sphere**:
+- `|0⟩` is at the north pole.
+- `|1⟩` is at the south pole.
+- `|+⟩ = (|0⟩ + |1⟩)/√2` lies on the **+X axis**.
+- Our state `( |0⟩ + i|1⟩ ) / √2` lies on the **+Y axis**.
+
+So this state is rotated by **90° about the Z-axis** compared to `|+⟩`.
+
+We usually call this state:
+
+```
+|y+⟩ = (|0⟩ + i|1⟩) / √2
+```
+
+---
+
+## 3. Measurement Outcomes
+
+### In the Z-basis (|0⟩, |1⟩)
+
+```
+p(0) = |⟨0|ψ⟩|² = 1/2
+p(1) = |⟨1|ψ⟩|² = 1/2
+```
+
+So measuring in the computational (Z) basis gives equal probabilities for `|0⟩` and `|1⟩`.
+
+---
+
+### In the Y-basis (|y+⟩, |y−⟩)
+
+Define:
+
+```
+|y+⟩ = (|0⟩ + i|1⟩)/√2
+|y−⟩ = (|0⟩ − i|1⟩)/√2
+```
+
+Since `|ψ⟩ = |y+⟩`, measurement results are deterministic:
+
+```
+p(y+) = 1
+p(y−) = 0
+```
+
+So the qubit is **fully aligned with the +Y direction**.
+
+---
+
+## 4. Density Matrix Form
+
+The density matrix ρ = |ψ⟩⟨ψ| is:
+
+```
+ρ = (1/2) * [[1, -i],
+              [i,  1]]
+```
+
+---
+
+## 5. Pauli Operator Expectations
+
+Using the Pauli matrices:
+
+```
+σx = [[0, 1],
+      [1, 0]]
+
+σy = [[0, -i],
+      [i,  0]]
+
+σz = [[1,  0],
+      [0, -1]]
+```
+
+The expectation values are:
+
+```
+⟨σx⟩ = 0
+⟨σy⟩ = +1
+⟨σz⟩ = 0
+```
+
+So the Bloch vector for this state is:
+
+```
+r = (0, 1, 0)
+```
+
+which confirms it lies on the **+Y axis**.
+
+---
+
+## 6. Projector Representation
+
+Projectors for Y-basis measurement:
+
+```
+Π(y+) = (1/2) * [[1, -i],
+                 [i,  1]]
+
+Π(y−) = (1/2) * [[1,  i],
+                 [-i, 1]]
+```
+
+These satisfy:
+```
+Π(y+) + Π(y−) = I
+Π(y+) − Π(y−) = σy
+```
+
+---
+
+## 7. Circuit That Prepares This State
+
+Start from `|0⟩` and apply:
+
+1. **Hadamard (H)** gate:
+   ```
+   H|0⟩ = (|0⟩ + |1⟩)/√2 = |+⟩
+   ```
+
+2. **Phase (S)** gate:
+   ```
+   S = diag(1, i)
+   S|+⟩ = (|0⟩ + i|1⟩)/√2 = |ψ⟩
+   ```
+
+Circuit notation:
+
+```
+|0⟩ ── H ── S ──▶ |ψ⟩ = (|0⟩ + i|1⟩)/√2
+```
+
+---
+
+## 8. Summary Table
+
+| Property | Symbol / Formula | Result |
+|-----------|------------------|---------|
+| **State** | `|ψ⟩` | `( |0⟩ + i|1⟩ ) / √2` |
+| **Vector form** | — | (1/√2) · [1, i]ᵀ |
+| **Bloch vector** | — | (0, 1, 0) |
+| **Axis on Bloch sphere** | — | +Y |
+| **Z-basis measurement** | — | (½, ½) |
+| **Y-basis measurement** | — | (1, 0) |
+| **⟨σx⟩, ⟨σy⟩, ⟨σz⟩** | — | (0, 1, 0) |
+| **Preparation circuit** | — | H → S |
+
+---
+
+## 9. Interpretation
+
+This qubit state represents a **pure phase rotation** of `|+⟩`.  
+It behaves identically to `|+⟩` when measured in Z or X bases,  
+but yields a deterministic outcome when measured along the Y axis.  
+
+This shows how a **relative phase** — even if invisible in one basis —  
+corresponds to a **rotation on the Bloch sphere**, which *does* affect other measurements.
+
+---
+
+## 10. Visualization
+
+![Bloch sphere showing |ψ⟩ = (|0⟩ + i|1⟩)/√2 on +Y](bloch_y_plus.png)
+
+---
+
+### References
+
+- [Quantum Country](https://quantum.country)
+- Nielsen & Chuang, *Quantum Computation and Quantum Information*
+- IBM Quantum Experience Bloch sphere visualizer
+
+
+![Bloch sphere showing |ψ⟩ = (|0⟩ + i|1⟩)/√2 on +Y](bloch_y_plus.png)
+
+![Bloch sphere showing |ψ⟩ = (|0⟩ + i|1⟩)/√2 on +Y](bloch_y_plus.svg)
+
+
+
+
