@@ -2589,59 +2589,59 @@ Together, X and Z give you the two fundamental levers of quantum computation.
 ## Step 1: Recall the definitions
 
 The Hadamard basis states:
-|+⟩ = (|0⟩ + |1⟩)/√2
-|−⟩ = (|0⟩ − |1⟩)/√2
-The Z gate acts on computational basis states:
-Z|0⟩ = |0⟩
-Z|1⟩ = −|1⟩
-And quantum gates are linear operators, meaning:
-Z (a|ψ⟩ + b|φ⟩) = a Z|ψ⟩ + b Z|φ⟩
-This is the key step the image mentions.
-## Step 2: Apply Z to |+⟩
+|+⟩ = (|0⟩ + |1⟩)/√2 \
+|−⟩ = (|0⟩ − |1⟩)/√2 \
+**The Z gate acts on computational basis states:** \
+Z|0⟩ = |0⟩ \
+Z|1⟩ = −|1⟩ \
+**And quantum gates are linear operators, meaning:** \
+Z (a|ψ⟩ + b|φ⟩) = a Z|ψ⟩ + b Z|φ⟩ \
+This is the key step the image mentions. \
+## Step 2: Apply Z to |+⟩ 
 
-Start with:
-Z|+⟩ = Z (|0⟩ + |1⟩)/√2
-Now use linearity to “pull Z inside”:
-= (Z|0⟩ + Z|1⟩) / √2
-Now replace each with how Z acts:
-Z|0⟩ = |0⟩
-Z|1⟩ = −|1⟩
-So:
-= (|0⟩ − |1⟩) / √2
-But the definition of |−⟩ is exactly:
-|−⟩ = (|0⟩ − |1⟩)/√2
-Therefore:
+Start with: \
+Z|+⟩ = Z (|0⟩ + |1⟩)/√2 \
+Now use linearity to “pull Z inside”: \
+= (Z|0⟩ + Z|1⟩) / √2 \
+Now replace each with how Z acts: \
+Z|0⟩ = |0⟩ \
+Z|1⟩ = −|1⟩ \
+So: \
+= (|0⟩ − |1⟩) / √2 \
+But the definition of |−⟩ is exactly: \
+|−⟩ = (|0⟩ − |1⟩)/√2 \
+Therefore: \
 ## Step 3: Apply Z to |−⟩
 
-Start:
-Z|−⟩ = Z (|0⟩ − |1⟩)/√2
-Use linearity:
-= (Z|0⟩ − Z|1⟩)/√2
-Substitute Z’s action:
-Z|0⟩ = |0⟩
-Z|1⟩ = −|1⟩
-So:
-= (|0⟩ − (−|1⟩)) / √2
-Be careful: minus a minus gives a plus.
-= (|0⟩ + |1⟩)/√2
-And that’s the definition of |+⟩:
-Z|−⟩ = |+⟩
-Step 4: What happened conceptually?
+Start: \
+Z|−⟩ = Z (|0⟩ − |1⟩)/√2 \
+Use linearity: \
+= (Z|0⟩ − Z|1⟩)/√2 \
+Substitute Z’s action: \
+Z|0⟩ = |0⟩ \
+Z|1⟩ = −|1⟩ \
+So: \
+= (|0⟩ − (−|1⟩)) / √2 \
+Be careful: minus a minus gives a plus. \
+= (|0⟩ + |1⟩)/√2 \
+And that’s the definition of |+⟩: \
+Z|−⟩ = |+⟩ \
+Step 4: What happened conceptually? \
 
-The Z gate:
+The Z gate: \
 
-keeps the |0⟩ part alone
+keeps the |0⟩ part alone \
 
-flips the sign of the |1⟩ part
+flips the sign of the |1⟩ part \
 
 The |+⟩ and |−⟩ states are balanced superpositions.
-Z just swaps them by flipping the sign on the |1⟩ component.
+Z just swaps them by flipping the sign on the |1⟩ component. \
 
 It’s like:
 
-|+⟩ = “same sign”
+|+⟩ = “same sign” \
 
-|−⟩ = “opposite signs”
+|−⟩ = “opposite signs” \
 
 Z turns “same sign” into “opposite sign,”
 and “opposite sign” back into “same sign.”
