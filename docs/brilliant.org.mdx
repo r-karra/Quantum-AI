@@ -2372,19 +2372,122 @@ It’s like spinning a coin in the air (first H), then spinning it the same way 
 
 
 
+# Understanding Why the Hadamard Matrix Looks the Way It Does
+
+Let’s slow this down and peel the confusion layer by layer, like a quantum onion that refuses to stay still.
+
+You’re asking a perfectly sharp question:
+
+If  
+\|0⟩ = [1 0]  
+and  
+\|1⟩ = [0 1],  
+
+why does the Hadamard matrix use rows **[1 1]** and **[1 −1]**?  
+Where did those numbers come from?  
+Why not use “10”, “01”, etc.?
+
+---
+
+## 1. \|0⟩ and \|1⟩ Are Inputs, Not Instructions for the Matrix
+
+When you apply a gate (a matrix) to a state (a column vector), you perform:
+output = H × input
+
+The input vectors look like:
+
+\|0⟩ =  
+
+[1
+0]
+
+\|1⟩ = 
+[0
+1]
+
+These represent the amplitudes of the qubit before the gate acts.
+
+---
+
+## 2. A Gate Tells You How to Mix Those Amplitudes
+
+The Hadamard matrix is:
+H = (1/√2) * [ 1 1
+1 -1 ]
 
 
+This matrix is **not** describing the qubit.  
+It’s describing what the *gate* does to **any** qubit.
+
+Each row of the matrix is an instruction:
+
+- First row → how to compute the new amplitude of \|0⟩  
+- Second row → how to compute the new amplitude of \|1⟩  
+
+That’s why the rows are `[1 1]` and `[1 −1]`.  
+They are **mixing rules**, not qubit states.
+
+---
+
+## 3. Example: Apply H to \|0⟩
+
+Compute:
+H|0⟩ = (1/√2) * [ 1 1 ] [1]
+[ 1 -1 ] [0]
 
 
+Multiply:
+
+Top entry:  
+`1⋅1 + 1⋅0 = 1`  
+
+Bottom entry:  
+`1⋅1 + (−1)⋅0 = 1`
+
+So the result is:
+(1/√2) * [1
+1]
+
+Which is the state \|+⟩.
+
+---
+
+## 4. Why the Hadamard Rows Cannot Be “10” or “01”
+
+Quantum gates are **linear operators**.  
+Their job is to map:
+[a
+b] → [a'
+b']
 
 
+Matrix entries must be **numbers**:
+
+- `1` means “keep the amplitude”
+- `−1` means “flip the sign”
+- `1/√2` ensures normalization
+
+“10” or “01” are **two-number vectors**, not valid matrix elements.  
+Rows must contain **numbers**, not bitstrings.
+
+---
+
+## 5. The Core Reason
+
+\|0⟩ = [1 0] and \|1⟩ = [0 1] are **states**.  
+The Hadamard matrix
+H = (1/√2) * [ 1 1
+1 -1 ]
 
 
+is a **transformation**.
 
+The entries `[1 1]` and `[1 −1]` encode the operations  
+**“add the amplitudes”** and **“subtract the amplitudes.”**
 
+They are not encoding “10” or “01”—they are defining how a qubit transforms.
 
-
-
+---
 
 
 
